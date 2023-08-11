@@ -1,0 +1,32 @@
+
+{% block content %}
+<div class="container">
+  <h2>Service Request Tracking</h2>
+  <table border="" class="table table-dark table-striped">
+    <thead>
+      <tr>
+        <th>Customer Name</th>
+        <th>Request Type</th>
+        <th>Status</th>
+        <th>Submitted At</th>
+        <th>Resolved At</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for request in requests %}
+        <tr>
+          <td>{{ request.customer_name }}</td>
+          <td>{{ request.request_type }}</td>
+          <td>{{ request.status }}</td>
+          <td>{{ request.submitted_at }}</td>
+          <td>{{ request.resolved_at }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<a href = "/service_requests/submit_request/">Go To Request</a>
+
+
+{% endblock %}
